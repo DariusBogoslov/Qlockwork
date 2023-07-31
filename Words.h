@@ -328,4 +328,34 @@ Words.h
 #define SW_H_ELVA              matrix[9] |= 0b0001111000000000
 #define SW_H_TOLV              matrix[9] |= 0b0000000111100000
 
+// RO
+
+#define RO_ESTEORA_BM       0b1111011100000000
+#define RO_ESTEORA          matrix[0] |= RO_ESTEORA_BM
+#define RO_ESTEORA_R        matrix[0] &= ~RO_ESTEORA_BM
+#define RO_UN               matrix[7] |= 0b0000000001100000
+#define RO_AM               matrix[1] |= 0b0000000001100000
+#define RO_PM               matrix[0] |= 0b0000000011000000
+
+#define RO_CINCI            matrix[9] |= 0b1111100000000000
+#define RO_ZECE             matrix[7] |= 0b0000011110000000
+#define RO_SFERT            matrix[9] |= 0b0000001111100000
+#define RO_DOUAZECI         matrix[8] |= 0b1111111100000000
+#define RO_TREIZECI         matrix[6] |= 0b0001111111100000
+#define RO_FARA             matrix[7] |= 0b1111000000000000
+#define RO_SI               matrix[6] |= 0b1100000000000000
+#define RO_SPRE             matrix[1] |= 0b0000011110000000
+
+#define RO_H_UNU            matrix[4] |= 0b0000111000000000
+#define RO_H_DOUA           matrix[1] |= 0b1111000000000000
+#define RO_H_TREI           matrix[4] |= 0b0000000111100000
+#define RO_H_PATRU          matrix[4] |= 0b1111100000000000
+#define RO_H_CINCI          matrix[5] |= 0b0000011111000000
+#define RO_H_SASE           matrix[3] |= 0b0000000111100000
+#define RO_H_SAPTE          matrix[5] |= 0b1111100000000000
+#define RO_H_OPT            matrix[3] |= 0b0000111000000000
+#define RO_H_NOUA           matrix[3] |= 0b1111000000000000
+#define RO_H_ZECE           matrix[2] |= 0b0000001111000000
+#define RO_H_UNSPREZECE     matrix[7] |= 0b1111111111000000
+
 #endif

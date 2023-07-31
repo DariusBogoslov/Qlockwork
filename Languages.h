@@ -19,6 +19,7 @@ enum eFrontCover : uint8_t
   FRONTCOVER_FR,
   FRONTCOVER_IT,
   FRONTCOVER_NL,
+  FRONTCOVER_RO,
   FRONTCOVER_SW,
   FRONTCOVER_BINARY,
   FRONTCOVER_COUNT
@@ -39,7 +40,8 @@ const char sLanguageStr[][20] PROGMEM =
   { "Italian" }, // 10
   { "Dutch" },  // 11
   { "Swedish" },// 12
-  { "Binary" }// 13
+  { "Binary" },// 13
+  { "Romanian" } // 14
 };
 
 
@@ -475,5 +477,78 @@ const char sColorStr[][15] PROGMEM =
 #define TXT_OW_LOCATION "OpenWeather Location"
 #define TXT_COVER_LANGUAGE "Language/Dialect"
 #endif
+
+#endif
+
+#ifdef LANGUAGE_RO
+const char sWeekday[][2] = {
+    { ' ', ' ' }, // 00
+    { 'D', 'U' }, // 01
+    { 'L', 'U' }, // 02
+    { 'M', 'A' }, // 03
+    { 'M', 'I' }, // 04
+    { 'J', 'O' }, // 05
+    { 'V', 'I' }, // 06
+    { 'S', 'A' }  // 07
+};
+const char sColorStr[][15] PROGMEM =
+{
+  "Alb",
+  "Rosu",
+  "Rosu 75%",
+  "Rosu 20%",
+  "Portocaliu",
+  "Galben",
+  "Galben 25%",
+  "Galben 50%",
+  "Verde-Galben",
+  "Verde",
+  "Verde 25%",
+  "Verde 50%",
+  "Verde menta",
+  "Cyan",
+  "Cyan 25%",
+  "Cyan 50%",
+  "Albastru deschid",
+  "Albastru",
+  "Albastru 25%",
+  "Albastru 50%",
+  "Mov",
+  "Magenta",
+  "Magenta 25%",
+  "Magenta 50%",
+  "Roz",
+  "Mood"
+};
+#define LANGSTR "ro"
+#define TXT_SETTINGS "Setari"
+#define TXT_ALARM "Alarma"
+#define TXT_ON "pornit"
+#define TXT_OFF "oprit"
+#define TXT_HOURBEEP "Beep la ora"
+#define TXT_TIMER "Timer"
+#define TXT_MINUTES "minute"
+#define TXT_COLOR "Culoare"
+#define TXT_COLORCHANGE "Schimbare culoare"
+#define TXT_BRIGHTNESS "Intensitate"
+#define TXT_SHOW_TEMP "Arata temperatura"
+#define TXT_AUTO_BRIGHTNESS "Auto intensitate"
+#define TXT_TRANSITION "Animatie tranzaitie"
+#define TXT_TIMEOUT "Inapoi la timeout-ul ceasului"
+#define TXT_NIGHT_OFF "Opreste la"
+#define TXT_DAY_ON "Porneste la"
+#define TXT_PURIST_MODE "Purist Mode" 
+#define TXT_SHOW_GSI "Show \"GSI\""
+#define TXT_SET_DATE_TIME "Setare data/ora"
+#define TXT_ACTIVE "Activ"
+#define TXT_DATE "Data"
+#define TXT_TEXT "Text"
+#define TXT_ANIMATION "Animatie"
+#define TXT_REP_RATE "Rata de repetitie"
+#define TXT_ADMIN "Admin"
+#define TXT_TIME_SERVER "Time Server URL"
+#define TXT_OW_API_KEY "OpenWeather API Key"
+#define TXT_OW_LOCATION "OpenWeather Location"
+#define TXT_COVER_LANGUAGE "Limba/dialect"
 
 #endif

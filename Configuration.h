@@ -51,11 +51,12 @@
 #endif
 
 //#define LANGUAGE_EN
-#define LANGUAGE_DE
+// #define LANGUAGE_DE
 //#define LANGUAGE_FR
 //#define LANGUAGE_IT
 //#define LANGUAGE_ES
 //#define LANGUAGE_NL
+#define LANGUAGE_RO
 
 //*****************************************************************************
 // Timezone
@@ -75,8 +76,8 @@
 //#define TIMEZONE_VTZ   // VTZ   Greenland Eastern Standard Time UTC-2
 //#define TIMEZONE_AZOT  // AZOT  Azores Time UTC-1
 //#define TIMEZONE_GMT   // GMT   Greenwich Mean Time UTC
-#define TIMEZONE_CET     // CET   Central Europe Time UTC+1
-//#define TIMEZONE_EST   // EST   Eastern Europe Time UTC+2
+// #define TIMEZONE_CET     // CET   Central Europe Time UTC+1
+#define TIMEZONE_EST   // EST   Eastern Europe Time UTC+2
 //#define TIMEZONE_MSK   // MSK   Moscow Time UTC+3 (no DST)
 //#define TIMEZONE_GST   // GST   Gulf Standard Time UTC+4
 //#define TIMEZONE_PKT   // PKT   Pakistan Time UTC+5

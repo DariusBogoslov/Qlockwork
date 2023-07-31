@@ -871,6 +871,88 @@ void Renderer::setTime(uint8_t hours, uint8_t minutes, uint8_t language, bool ch
       break;
     }
     break;
+  case FRONTCOVER_RO
+  RO_ESTEORA;
+    switch (minutes / 5)
+    {
+    case 0:
+      // glatte Stunde
+      setHours(hours, true, language, matrix);
+      break;
+    case 1:
+      // 5 nach
+      RO_SI;
+      RO_CINCI;
+      setHours(hours, false, language, matrix);
+      break;
+    case 2:
+      // 10 nach
+      RO_SI;
+      RO_ZECE;
+      setHours(hours, false, language, matrix);
+      break;
+    case 3:
+      // viertel nach
+      RO_SI;
+      RO_UN;
+      RO_SFERT;
+      setHours(hours, false, language, matrix);
+      break;
+    case 4:
+      // 20 nach
+      RO_SI;
+      RO_DOUAZECI;
+      setHours(hours, false, language, matrix);
+      break;
+    case 5:
+      // 5 vor halb
+      RO_SI;
+      RO_DOUAZECI;
+      RO_SI;
+      RO_CINCI;
+      setHours(hours, false, language, matrix);
+      break;
+    case 6:
+      // halb
+      RO_SI;
+      RO_TREIZECI;
+      setHours(hours, false, language, matrix);
+      break;
+    case 7:
+      // 5 nach halb
+      RO_FARA;
+      RO_DOUAZECI;
+      RO_SI;
+      RO_CINCI;
+      setHours(hours + 1, false, language, matrix);
+      break;
+    case 8:
+      // 20 vor
+      RO_FARA;
+      RO_DOUAZECI;
+      setHours(hours + 1, false, language, matrix);
+      break;
+    case 9:
+      // viertel vor
+      RO_FARA;
+      RO_UN;
+      RO_SFERT;
+      setHours(hours + 1, false, language, matrix);
+      break;
+    case 10:
+      // 10 vor
+      RO_FARA;
+      RO_ZECE;
+      setHours(hours + 1, false, language, matrix);
+      break;
+    case 11:
+      // 5 vor
+      RO_FARA;
+      RO_CINCI;
+      setHours(hours + 1, false, language, matrix);
+      break;
+    }
+    break;
   default:
     ;
   }
@@ -1440,6 +1522,61 @@ void Renderer::setHours(uint8_t hours, boolean glatt, uint8_t language, uint16_t
       break;
     }
     break;
+  case FRONTCOVER_RO:
+  switch (hours) {
+    case 0:
+    case 12:
+    case 24:
+      RO_H_DOUA;
+      RO_SPRE;
+      RO_H_ZECE;
+      break;
+    case 1:
+    case 13:
+      RO_H_UNU;
+      break;
+    case 2:
+    case 14:
+      RO_H_DOUA;
+      break;
+    case 3:
+    case 15:
+      RO_H_TREI;
+      break;
+    case 4:
+    case 16:
+      RO_H_PATRU;
+      break;
+    case 5:
+    case 17:
+      RO_H_CINCI;
+      break;
+    case 6:
+    case 18:
+      RO_H_SASE;
+      break;
+    case 7:
+    case 19:
+      RO_H_SAPTE;
+      break;
+    case 8:
+    case 20:
+      RO_H_OPT;
+      break;
+    case 9:
+    case 21:
+      RO_H_NOUA;
+      break;
+    case 10:
+    case 22:
+      RO_H_ZECE;
+      break;
+    case 11:
+    case 23:
+      RO_H_UNSPREZECE
+      break;
+    }
+    break;
   default:
     ;
   }
@@ -1485,6 +1622,8 @@ void Renderer::clearEntryWords(uint8_t language, uint16_t matrix[])
   case FRONTCOVER_SW:
     SW_KLOCKANAER_R; // remove KLOCKAN AER
     break;
+  case FRONTCOVER_RO:
+    RO_ESTEORA_R; // remove ESTE ORA
   default:
     ;
   }
@@ -1537,6 +1676,10 @@ void Renderer::setAMPM(uint8_t hours, uint8_t language, uint16_t matrix[])
   case FRONTCOVER_SW:
     if (hours < 12) SW_AM;
     else SW_PM;
+    break;
+  case FRONTCOVER_RO:
+    if (hours < 12) RO_AM;
+    else RO_PM;
     break;
   default:
     ;
